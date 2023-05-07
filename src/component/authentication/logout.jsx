@@ -1,14 +1,8 @@
-import React from 'react'
-import Navbar from '../layout/navbar'
-import {Box , Paper} from '@mui/material'
-import Login from '../authentication/login'
+import React from "react";
+import Login from "../authentication/login";
 
 const Logout = () => {
-    return (
-        <Login />
+  return <Login />;
+};
 
-
-    )
-}
-
-export default Logout
+export default Logout;

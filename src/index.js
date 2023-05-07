@@ -4,24 +4,24 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 
 import Routines from "./component/routines/routines";
-import Newroutin from "./component/routines/newroutine";
+import Newroutin from "./component/routines/index/newroutine";
 
 import Exercise from "./component/exerciseShow/exercise";
 import Login from "./component/authentication/login";
 import Logout from "./component/authentication/logout";
 
 import Register from "./component/authentication/register";
-import Settings from "./component/layout/settings";
+import Settings from "./component/layout/setting/settings";
 // import { FontAwesomeIcon } from '@fortawesome/free-solid-svg-icons'
 
 import { store } from './store'
 import { Provider } from 'react-redux'
-import CardSelect from "./component/routines/cardSelect";
-import RoutinesDay from "./component/routines/routinesDay";
+import CardSelect from "./component/routines/card/cardSelect";
+import RoutinesDay from "./component/routines/index/routinesDay";
 import EditeRoutines from "./component/routines/updateRoutines/editeRoutines"
 import PrivateRoutes from "./component/authentication/privetRoutes";
-import LabelBottomNavigation from './component/layout/buttomNavigation'
-import Footer from "./component/layout/footer";
+import LabelBottomNavigation from './component/layout/buttomNavigation/buttomNavigation'
+import Footer from "./component/layout/footer/footer";
 // 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

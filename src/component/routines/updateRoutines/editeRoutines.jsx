@@ -14,14 +14,14 @@ import { setRoutes, addSetUpdate, deleteSuperSetHistory, deleteSet } from '../..
 import { createUpdateRoutes, setUpdateRoutes } from '../../../store/slice/updateRoutineSlice';
 // import CheckBox from '../checkBox';
 
-import Navbar from '../../layout/navbar'
+import Navbar from '../../layout/navbar/navbar'
 import InputAddNumberRoutinDay from '../input/addNumberRoutinDay';
 import InputAddRestTimer from '../input/inputAddRestTimer'
 import InputAddNote from '../input/inputAddNote';
 import MenuExercise from '../menuExercise';
 import routinApi from '../../axiosApi/axiosRoutin';
 import ListExercisesRoutin from '../listExercisesRoutin'
-import LongMenu from '../exampleRoutinCard';
+import LongMenu from '../example/exampleRoutinCard';
 import Media from '../../loading/skeleton';
 
 const style = {
