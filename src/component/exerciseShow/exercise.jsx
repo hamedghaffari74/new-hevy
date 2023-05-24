@@ -40,7 +40,7 @@ const Exercise = () => {
   const handleClose = () => setOpen(false);
 
   return (
-    <div className="newRoutin-style  md:direction: rtl">
+    <div className="newRoutin-style  md:direction: rtl min-h-[80vh]">
       <Navbar />
 
       <div className="lg:container mx-auto">

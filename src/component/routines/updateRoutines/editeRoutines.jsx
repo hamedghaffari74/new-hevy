@@ -164,7 +164,7 @@ const EditeRoutin = () => {
     return <Navigate to="../routines" />;
   }
   return (
-    <div className="routin-style ">
+    <div className="routin-style min-h-[80vh] ">
       <Navbar />
       <div className="  mx-auto lg:container md:direction: rtl mt-7">
         <div className="exercise-box  lg:flex sm:w-full  lg:mr-21">
