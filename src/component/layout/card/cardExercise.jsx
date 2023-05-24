@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Fit1 from "../../video/Fit1.mp4";
+import Fit1 from "../../../video/Fit1.mp4";
 
 const CardExercise = () => {
   const list = useSelector((state) => state.exerciseShow.list);

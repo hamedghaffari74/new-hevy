@@ -5,23 +5,25 @@ import { useDispatch } from "react-redux";
 import { Button, Box, Typography } from "@mui/material";
 import ContentPasteIcon from "@mui/icons-material/ContentPaste";
 import { Link, NavLink } from "react-router-dom";
-import { remove } from "../../store/slice/routinesdaySlice";
-import { Remove } from "../../store/slice/exerciseSlice";
-import { rEmove } from "../../store/slice/routineSlice";
+import { removeRoutineDay } from "../../store/slice/routinesdaySlice";
+import { removeExercise } from "../../store/slice/exerciseSlice";
+import { removeRoutine } from "../../store/slice/routineSlice";
 import { createList, deleteRouteRedux } from "../../store/slice/titleRoutin";
 import ExampleRoutines from "./example/exampleRoutines";
 import useSWR from "swr";
 import routineApi from "../axiosApi/axiosRoutin";
 import axios from "axios";
-import Footer from "../layout/footer/footer";
 import { useSelector } from "react-redux";
-import CircularUnderLoad from "../loading/loading";
 import Skeleton from "@mui/material/Skeleton";
 function Routines() {
   const dispatch = useDispatch();
   const routeTitle = useSelector((state) => state.titleRoutin?.list);
-
-
+  useEffect(() => {
+    dispatch(removeRoutineDay())
+    dispatch(removeRoutine())
+    dispatch(removeExercise())
+  }, [])
+  
   axios.defaults.headers.get["Authorization"] = `Bearer ${localStorage.getItem(
     "token"
   )}`;
@@ -57,7 +59,7 @@ function Routines() {
             </Button>
           </div>
 
-          <div className="routin-right md:w-full lg:w-4/6  ">
+          <div className="routin-right min:h-14 md:w-full lg:w-4/6  ">
             <div className="displayStyle">
               <Typography className="pt-4 length-route">
                 روتین های من ({routeTitle?.length})
@@ -98,7 +100,7 @@ function Routines() {
               </Link>
             </Button>
           </div>
-          <div className="routin-right">
+          <div className="routin-right min:h-14">
             <div className="displayStyle">
               <Typography className="pt-4 length-route">
                 روتین های من({routeTitle?.length})

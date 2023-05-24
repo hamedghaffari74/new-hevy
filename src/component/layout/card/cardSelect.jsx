@@ -21,7 +21,6 @@ import {
   TableHead,
   TableBody,
   TableRow,
-  Paper,
 } from "@mui/material";
 import InputAddTitle from "../../routines/input/inputAddTitle";
 import InputAddNumber from "../../routines/input/inputAddNumber";
@@ -29,7 +28,7 @@ import InputAddNote from "../../routines/input/inputAddNote";
 import InputAddRestTimer from "../../routines/input/inputAddRestTimer";
 import ClearIcon from "@mui/icons-material/Clear";
 import MenuExercise from "../../routines/menuExercise";
-import LongMenuExercise from "../../routines/example/exampleCard";
+import LongMenuExercise from "../example/exampleCard";
 import ListSelectedExercise from "../../routines/listSelectedExercise";
 
 const style = {
@@ -104,7 +103,7 @@ const CardSelect = (props) => {
                 title={<h1 className="title-card">{item.fa_title}</h1>}
               />
               <CardContent>
-                <InputAddNote separator={1} Id={item.key} />
+                <InputAddNote separator={1} Id={item.key} amount={item?.note} />
               </CardContent>
               <div className="restTimer" xs={12}>
                 <InputAddRestTimer separator={1} Id={item.key} />

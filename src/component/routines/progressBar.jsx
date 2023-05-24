@@ -39,7 +39,6 @@ const UrgeWithPleasureComponent = ({ amount, check }) => {
       className="progressBar"
     >
       <DialogTitle className="checkBox ">
-        {" "}
         <Typography> لطفا استراحت کنید</Typography>
       </DialogTitle>
       <DialogContent>

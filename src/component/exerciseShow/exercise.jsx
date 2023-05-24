@@ -11,7 +11,7 @@ import {
   Modal,
   Grid,
 } from "@mui/material";
-import CardExercise from "./cardExercise";
+import CardExercise from "../layout/card/cardExercise";
 import MenuExercise from "../routines/menuExercise";
 import { useSelector } from "react-redux";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";

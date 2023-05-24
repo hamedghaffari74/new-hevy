@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect} from "react";
 import { useDispatch } from "react-redux";
 import Navbar from "../../layout/navbar/navbar";
 import {
@@ -11,7 +11,7 @@ import {
   Box,
 } from "@mui/material";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
-import CardSelect from "../card/cardSelect";
+import CardSelect from "../../layout/card/cardSelect";
 import { useSelector } from "react-redux";
 import { createRoutes, setRoutes } from "../../../store/slice/routineSlice";
 import MenuExercise from "../menuExercise";

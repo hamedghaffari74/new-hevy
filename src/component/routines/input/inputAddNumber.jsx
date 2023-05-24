@@ -4,17 +4,7 @@ import { setInputNumber } from "../../../store/slice/exerciseSlice";
 import { setUpdateInputNumber } from "../../../store/slice/routinesdaySlice";
 import { createHistory } from "../../../store/slice/history";
 
-const InputAddNumber = ({
-  amountDay,
-  IndexSet,
-  Id,
-  Ind,
-  separator,
-  amount,
-  SetId,
-  Index_Id,
-  unit,
-}) => {
+const InputAddNumber = ({ IndexSet, Id, Ind, amount, Index_Id, unit }) => {
   let newamount = 0;
 
   amount?.map((amounts) => {
@@ -30,9 +20,7 @@ const InputAddNumber = ({
   };
 
   useEffect(() => {
-    if (separator == 1) {
-      dispatch(setInputNumber({ number, Id, IndexSet, Ind }));
-    }
+    dispatch(setInputNumber({ number, Id, IndexSet, Ind }));
   }, [number]);
 
   return (

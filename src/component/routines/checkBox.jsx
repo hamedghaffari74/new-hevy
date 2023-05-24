@@ -24,7 +24,7 @@ const CheckBox = ({ IdSet, IdEx, amount }) => {
     <div>
       <Checkbox {...label} onClick={success} />
       {check ? (
-        amount !== 0 ? (
+        amount !== 0 & amount !== "0"? (
           <UrgeWithPleasureComponent amount={amount} check={check} />
         ) : (
           ""

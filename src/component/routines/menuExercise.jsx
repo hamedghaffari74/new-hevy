@@ -31,7 +31,7 @@ import {
   addEquipments,
 } from "../../store/slice/listExercise";
 import Skeleton from "@mui/material/Skeleton";
-
+import Fit1 from "../../video/Fit1.mp4";
 const MenuExercise = ({ separator }) => {
   const list = useSelector((state) => state.listExercise.list);
   const dispatch = useDispatch();
@@ -82,16 +82,15 @@ const MenuExercise = ({ separator }) => {
   const [filterEquipment, setFilterEquipment] = useState(0);
   const [filterMuscles, setFilterMuscles] = useState(0);
   const [search, setSearch] = useState("");
+
   const handleFilterEquipment = (e) => {
     setFilterEquipment(e.target.value);
     setSearch("");
   };
-
   const handleFilterMuscles = (e) => {
     setFilterMuscles(e.target.value);
     setSearch("");
   };
-
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
@@ -101,7 +100,6 @@ const MenuExercise = ({ separator }) => {
       ? list.exercises
       : list.exercises.filter(
           (option) => option.equipment_id == filterEquipment
-          // option.equipment.title.toLowerCase().includes(filterEquipment.toLowerCase())
         );
 
   const filtered =
@@ -122,7 +120,7 @@ const MenuExercise = ({ separator }) => {
 
   const successfull = () => {
     setSuccessfullcreateExercise(true);
-  };
+  }
 
   return (
     <div>
@@ -132,7 +130,6 @@ const MenuExercise = ({ separator }) => {
         noValidate
         autoComplete="off"
       >
-        {/* <Typography>فیلتر :</Typography> */}
         <div className="flex justify-center menuFilter">
           <div className="mb-3 w-96 dir-rtl  ">
             <Typography>
@@ -140,13 +137,12 @@ const MenuExercise = ({ separator }) => {
                 value={filterEquipment}
                 onChange={handleFilterEquipment}
                 className="h-18 form-select appearance-none block w-full px-3 py-3 text-base font-normal
-                               text-gray-700  bg-white bg-clip-padding bg-no-repeat
-                               border border-solid border-gray-300 rounded transition ease-in-out m-0
-                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                 text-gray-700  bg-white bg-clip-padding bg-no-repeat
+                   border border-solid border-gray-300 rounded transition ease-in-out m-0
+                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Default select example"
               >
-                <option className="fv">لوازم ورزشی</option>
-
+                <option value={0}>لوازم ورزشی</option>
                 {list.equipments?.map((item, index) => (
                   <option className="fv" key={item.id} value={item.id}>
                     {item.title}
@@ -163,12 +159,12 @@ const MenuExercise = ({ separator }) => {
                 value={filterMuscles}
                 onChange={handleFilterMuscles}
                 className="h-18 form-select appearance-none block w-full px-3 py-3 text-base font-normal
-                                          text-gray-700  bg-white bg-clip-padding bg-no-repeat  border border-solid
-                                           border-gray-300  rounded transition ease-in-out m-0 focus:text-gray-700
-                                           focus:bg-white focus:border-blue-600 focus:outline-none"
+                 text-gray-700  bg-white bg-clip-padding bg-no-repeat  border border-solid
+                 border-gray-300  rounded transition ease-in-out m-0 focus:text-gray-700
+                 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Default select example"
               >
-                <option>عضلات</option>
+                <option value={0}>عضلات</option>
                 {list.musclses?.map((item) => (
                   <option key={item.id} value={item.id}>
                     {item.title}
@@ -272,7 +268,7 @@ const MenuExercise = ({ separator }) => {
                     <Avatar
                       alt="Remy Sharp"
                       sx={{ width: 50, height: 50 }}
-                      src={fit2}
+                      src={option?.media}
                     />
                   </ListItemAvatar>
                   <ListItemText

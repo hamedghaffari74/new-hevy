@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../layout/navbar/navbar";
-import CardRoutineDay from "../card/cardRoutineDay";
+import CardRoutineDay from "../../layout/card/cardRoutineDay";
 
 const RoutinesDay = () => {
   return (

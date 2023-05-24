@@ -3,8 +3,6 @@ import {
   Box,
   Button,
   Typography,
-  Stack,
-  Avatar,
   ListItemText,
   MenuItem,
   InputLabel,
@@ -83,8 +81,9 @@ const CreateExercise = ({ handleCloseCreate, successfull }) => {
       video: null,
     },
     onSubmit: (values) => {
+      console.log(values);
       routinApi
-        .post(`/exercises`, values)
+        .post(`mongodb://admin:7gx3qRUysXdpTOnHtj4NW0kB@MongoS3601A.back4app.com:27017/3ff7ad98dfd14f3e8a8392a87fb17f68`, values)
         .then((res) => {
           setText(res.data.message);
           setCondition(1);

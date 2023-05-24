@@ -6,18 +6,12 @@ import {
   deleteExercise,
   createSuperSet,
 } from "../../../store/slice/exerciseSlice";
-import {
-  updateDeleteExercise,
-  addReplace,
-  updatecreateSuperSet,
-} from "../../../store/slice/routinesdaySlice";
 import { useDispatch } from "react-redux";
-
-const ITEM_HEIGHT = 48;
+import { grey } from "@mui/material/colors";
+import Divider from "@mui/material/Divider";
 
 export default function LongMenuExercise({
   Id,
-  seperator,
   getReplace,
   getSuperSet,
   getSuperSetId,
@@ -32,23 +26,16 @@ export default function LongMenuExercise({
   };
 
   const dispatch = useDispatch();
+
   const handleDelete = () => {
-    if (seperator == 1) {
-      dispatch(deleteExercise(Id));
-    }
-    if (seperator == 2) {
-      dispatch(updateDeleteExercise(Id));
-    }
+    dispatch(deleteExercise(Id));
   };
+
   const handleReplace = () => {
     getReplace(true);
-    if (seperator == 1) {
-      dispatch(deleteExercise(Id));
-    }
-    if (seperator == 2) {
-      dispatch(updateDeleteExercise(Id));
-    }
+    dispatch(deleteExercise(Id));
   };
+
   const handleSuperSet = () => {
     dispatch(createSuperSet(Id));
     getSuperSet(true);
@@ -67,34 +54,33 @@ export default function LongMenuExercise({
         <MoreVertIcon />
       </IconButton>
       <Menu
-        id="long-menu"
-        MenuListProps={{
-          "aria-labelledby": "long-button",
-        }}
+        id="basic-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
+        }}
         PaperProps={{
           style: {
-            maxHeight: ITEM_HEIGHT * 4.5,
-            width: "20ch",
+            border: "2px solid",
+            borderColor: grey[200],
+            borderRadius: "12px",
+            alignItems: "flex-start",
+            gap: "10px",
           },
         }}
       >
-        <MenuItem onClick={handleDelete} key={1}>
-          <button>
-            <Typography> حذف </Typography>
-          </button>
+        <MenuItem className="" onClick={handleDelete}>
+          <Typography className="text-lg"> حذف کردن</Typography>
         </MenuItem>
-        <MenuItem onClick={handleReplace} key={2}>
-          <button>
-            <Typography> جایگزینی </Typography>
-          </button>
+        <Divider />
+        <MenuItem className="" onClick={handleReplace}>
+          جایگزین کردن
         </MenuItem>
-        <MenuItem onClick={handleSuperSet} key={3}>
-          <button>
-            <Typography> سوپرست </Typography>
-          </button>
+        <Divider />
+        <MenuItem className="" onClick={handleSuperSet}>
+          سوپرست
         </MenuItem>
       </Menu>
     </div>

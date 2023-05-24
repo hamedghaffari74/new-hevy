@@ -20,11 +20,7 @@ import {
   Avatar,
   Modal,
   Popover,
-  Alert,
-  AlertTitle,
-  Stack,
   Skeleton,
-  useTheme,
 } from "@mui/material";
 import AvTimerIcon from "@mui/icons-material/AvTimer";
 import CheckIcon from "@mui/icons-material/Check";
@@ -42,7 +38,7 @@ import CheckBox from "../../routines/checkBox";
 import InputAddRestTimer from "../../routines/input/inputAddRestTimer";
 import InputAddNumberRoutinDay from "../../routines/input/addNumberRoutinDay";
 import InputAddNote from "../../routines/input/inputAddNote";
-import LongMenu from "../../routines/example/exampleRoutinCard";
+import LongMenu from "../example/exampleRoutinCard";
 import routinApi from "../../axiosApi/axiosRoutin";
 import MenuExercise from "../../routines/menuExercise";
 import TimerRoutin from "../../routines/timerRoutin";
@@ -192,7 +188,7 @@ const CardRoutineDay = () => {
   };
 
   useEffect(() => {
-    if (history.timer > 5) {
+    if (history.timer > 2) {
       routinApi
         .post(`/routine/history`, history)
         .then((res) => setSuccessfull(true))

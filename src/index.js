@@ -16,13 +16,12 @@ import Settings from "./component/layout/setting/settings";
 
 import { store } from './store'
 import { Provider } from 'react-redux'
-import CardSelect from "./component/routines/card/cardSelect";
 import RoutinesDay from "./component/routines/index/routinesDay";
 import EditeRoutines from "./component/routines/updateRoutines/editeRoutines"
 import PrivateRoutes from "./component/authentication/privetRoutes";
 import LabelBottomNavigation from './component/layout/buttomNavigation/buttomNavigation'
 import Footer from "./component/layout/footer/footer";
-// 
+ 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

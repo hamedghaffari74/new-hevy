@@ -7,7 +7,7 @@ const routinesdaySlice = createSlice({
     super_set: [],
   },
   reducers: {
-    remove: (state, { payload }) => {
+    removeRoutineDay: (state, { payload }) => {
       state.list = [];
     },
 
@@ -249,7 +249,7 @@ const routinesdaySlice = createSlice({
 });
 
 export const {
-  remove,
+  removeRoutineDay,
   setRoutes,
   setDone,
   addSetUpdate,
