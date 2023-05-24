@@ -12,7 +12,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import AvTimerIcon from "@mui/icons-material/AvTimer";
 import Button from "@mui/material/Button";
 import { useSelector, useDispatch } from "react-redux";
-import { addTimer, addSet } from "../../../store/slice/exerciseSlice";
+import {addSet } from "../../../store/slice/exerciseSlice";
 import { deleteSet } from "../../../store/slice/exerciseSlice";
 import {
   Table,
@@ -165,7 +165,6 @@ const CardSelect = (props) => {
                           </TableCell>
                         ))}
                         <TableCell key={333} align="left">
-                          {" "}
                           <ClearIcon
                             className=" hover:text-teal-500 hover hover:bg-gray-50"
                             fontSize="small"

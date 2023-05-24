@@ -45,7 +45,7 @@ import InputAddNote from "../input/inputAddNote";
 import MenuExercise from "../menuExercise";
 import routinApi from "../../axiosApi/axiosRoutin";
 import ListExercisesRoutin from "../listExercisesRoutin";
-import LongMenu from "../example/exampleRoutinCard";
+import LongMenu from "../../layout/example/exampleRoutinCard";
 import Media from "../../loading/skeleton";
 
 const style = {
@@ -176,14 +176,12 @@ const EditeRoutin = () => {
           <div className="exercise-right max-md:w-full mb-5 lg:w-4/6 md:mr-4  md:ml-10 mt-6 ">
             <div className="flex">
               <div className="mr-8 md:mr-5 f">
-                {" "}
                 <Button
                   onClick={handleSendServer}
                   variant="contained"
                   color="success"
                   className="input-title float-right "
                 >
-                  {" "}
                   <h2> ذخیره تغیرات</h2>
                 </Button>
               </div>
@@ -191,7 +189,6 @@ const EditeRoutin = () => {
             <div className="">
               {!list[0] ? (
                 <div className="mt-10">
-                  {" "}
                   <Media />
                 </div>
               ) : (
@@ -247,7 +244,6 @@ const EditeRoutin = () => {
                                           }`}
                                         >
                                           <Typography className="text-white-500">
-                                            {" "}
                                             {index + 1}
                                           </Typography>
                                         </div>
@@ -269,7 +265,6 @@ const EditeRoutin = () => {
                                           disableRestoreFocus
                                         >
                                           <Typography sx={{ p: 1 }}>
-                                            {" "}
                                             برای حذف دبل کلیک کنید
                                           </Typography>
                                         </Popover>
@@ -310,7 +305,6 @@ const EditeRoutin = () => {
                                           }`}
                                         >
                                           <Typography className="text-white-500">
-                                            {" "}
                                             {index + 1}
                                           </Typography>
                                         </div>
@@ -332,7 +326,6 @@ const EditeRoutin = () => {
                                           disableRestoreFocus
                                         >
                                           <Typography sx={{ p: 1 }}>
-                                            {" "}
                                             برای حذف نگه دارید
                                           </Typography>
                                         </Popover>
@@ -370,7 +363,6 @@ const EditeRoutin = () => {
                           <Typography>: زمان استراحت </Typography>
                         </h1>
                       </div>
-
                       <TableContainer sx={{ width: "100%" }} component={Paper}>
                         <Table
                           className="mr-0 ml-0"
@@ -390,7 +382,6 @@ const EditeRoutin = () => {
                               ))}
                             </TableRow>
                           </TableHead>
-
                           <TableBody>
                             {routes?.routine_sets?.map((sets, indexSet) => (
                               <TableRow
@@ -399,7 +390,6 @@ const EditeRoutin = () => {
                                 }`}
                               >
                                 <TableCell align="center">
-                                  {" "}
                                   {indexSet + 1}
                                 </TableCell>
                                 {/* <TableCell align="center" > -</TableCell> */}
@@ -421,7 +411,6 @@ const EditeRoutin = () => {
                                   </TableCell>
                                 ))}
                                 <TableCell align="left">
-                                  {" "}
                                   <ClearIcon
                                     className=" hover:text-teal-500 hover hover:bg-gray-50"
                                     fontSize="small"
@@ -450,7 +439,6 @@ const EditeRoutin = () => {
                         </Button>
                       </Grid>
                     </Card>
-
                     <Modal
                       open={openSuperSet}
                       onClose={handleCloseSuperSet}
@@ -463,7 +451,7 @@ const EditeRoutin = () => {
                     </Modal>
                   </>
                 ))
-              )}{" "}
+              )}
             </div>
             <div className="mt-3">
               <Hidden mdUp>

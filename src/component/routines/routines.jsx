@@ -9,7 +9,7 @@ import { removeRoutineDay } from "../../store/slice/routinesdaySlice";
 import { removeExercise } from "../../store/slice/exerciseSlice";
 import { removeRoutine } from "../../store/slice/routineSlice";
 import { createList, deleteRouteRedux } from "../../store/slice/titleRoutin";
-import ExampleRoutines from "./example/exampleRoutines";
+import ExampleRoutines from "../layout/example/exampleRoutines";
 import useSWR from "swr";
 import routineApi from "../axiosApi/axiosRoutin";
 import axios from "axios";
